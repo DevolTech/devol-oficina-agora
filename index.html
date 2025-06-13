@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Oficina Agora - Conectando Motoristas e Oficinas</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+  <!-- Hero -->
+  <section class="bg-blue-900 text-white text-center py-16 px-4">
+    <h1 class="text-4xl font-bold mb-4">Encontre a oficina ideal com 1 clique</h1>
+    <p class="text-lg mb-6">Compare preços, avaliações e agende seu atendimento sem sair de casa.</p>
+    <div class="flex flex-col sm:flex-row justify-center gap-4">
+      <a href="#sou-usuario" class="bg-white text-blue-900 font-semibold py-2 px-6 rounded-full">Sou Motorista</a>
+      <a href="#sou-oficina" class="bg-white text-blue-900 font-semibold py-2 px-6 rounded-full">Sou Oficina</a>
+    </div>
+  </section>
+
+  <!-- Como funciona -->
+  <section class="text-center py-12 px-6">
+    <h2 class="text-2xl font-bold mb-6">Como funciona</h2>
+    <ol class="space-y-4">
+      <li>🧭 Escolha o serviço que precisa</li>
+      <li>📍 Veja oficinas próximas com preço e avaliação</li>
+      <li>📅 Agende direto pelo app</li>
+    </ol>
+  </section>
+
+  <!-- Formulário para motoristas -->
+  <section id="sou-usuario" class="bg-white py-12 px-6">
+    <h2 class="text-2xl font-bold text-center mb-6">Sou motorista</h2>
+    <p class="text-center mb-4">Receba o convite para testar o app assim que estiver disponível. 100% gratuito!</p>
+    <form action="https://docs.google.com/forms/d/e/1FAIpQLSel6vOne5WAxGGneLFNYCM6CEkn2-Ecil4Ju0XqCrKlBZY-xA/viewform?usp=sharing&ouid=112454697016132132150" method="POST" class="max-w-md mx-auto space-y-4">
+      <input type="text" name="nome" placeholder="Nome completo" required class="w-full p-3 border rounded" />
+      <input type="email" name="email" placeholder="Seu e-mail" required class="w-full p-3 border rounded" />
+      <input type="text" name="cidade" placeholder="Cidade / Estado" required class="w-full p-3 border rounded" />
+      <button type="submit" class="w-full bg-blue-900 text-white py-3 rounded font-semibold">Quero ser avisado</button>
+    </form>
+  </section>
+
+  <!-- Formulário para oficinas -->
+  <section id="sou-oficina" class="bg-gray-50 py-12 px-6">
+    <h2 class="text-2xl font-bold text-center mb-6">Sou oficina</h2>
+    <p class="text-center mb-4">Participe do piloto gratuito e receba pedidos de serviços da sua região.</p>
+    <form action="https://docs.google.com/forms/d/e/1FAIpQLSeRLe8WUD92zkW3ahVQO6sXOzdqRhHYnnkQifCL20qFTcQrXw/viewform?usp=sharing&ouid=112454697016132132150" method="POST" class="max-w-md mx-auto space-y-4">
+      <input type="text" name="nome_oficina" placeholder="Nome da oficina" required class="w-full p-3 border rounded" />
+      <input type="text" name="responsavel" placeholder="Responsável" required class="w-full p-3 border rounded" />
+      <input type="email" name="email" placeholder="E-mail comercial" required class="w-full p-3 border rounded" />
+      <input type="text" name="whatsapp" placeholder="WhatsApp" required class="w-full p-3 border rounded" />
+      <input type="text" name="cidade" placeholder="Cidade / Estado" required class="w-full p-3 border rounded" />
+      <button type="submit" class="w-full bg-blue-900 text-white py-3 rounded font-semibold">Cadastrar minha oficina</button>
+    </form>
+  </section>
+
+  <!-- Rodapé -->
+  <footer class="bg-blue-900 text-white text-center py-6">
+    <p>Oficina Agora © 2025 • Projeto em validação de mercado</p>
+    <p>Contato:devoltech.co@gmail.com</p>
+  </footer>
+
+</body>
+</html>
