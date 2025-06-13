@@ -1,64 +1,114 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Oficina Agora - Conectando Motoristas e Oficinas</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Oficina Agora - Conectando Motoristas e Oficinas</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body class="bg-gray-100 text-gray-800">
 
-  <!-- Hero -->
-  <section class="bg-blue-900 text-white text-center py-16 px-4">
-    <h1 class="text-4xl font-bold mb-4">Encontre a oficina ideal com 1 clique</h1>
-    <p class="text-lg mb-6">Compare preços, avaliações e agende seu atendimento sem sair de casa.</p>
-    <div class="flex flex-col sm:flex-row justify-center gap-4">
-      <a href="#sou-usuario" class="bg-white text-blue-900 font-semibold py-2 px-6 rounded-full">Sou Motorista</a>
-      <a href="#sou-oficina" class="bg-white text-blue-900 font-semibold py-2 px-6 rounded-full">Sou Oficina</a>
-    </div>
-  </section>
+    <section class="bg-blue-900 text-white text-center py-16 px-4">
+        <h1 class="text-4xl font-bold mb-4">Encontre a oficina ideal com 1 clique</h1>
+        <p class="text-lg mb-6">Compare preços, avaliações e agende seu atendimento sem sair de casa.</p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+            <a href="#sou-usuario" class="bg-white text-blue-900 font-semibold py-2 px-6 rounded-full">Sou Motorista</a>
+            <a href="#sou-oficina" class="bg-white text-blue-900 font-semibold py-2 px-6 rounded-full">Sou Oficina</a>
+        </div>
+    </section>
 
-  <!-- Como funciona -->
-  <section class="text-center py-12 px-6">
-    <h2 class="text-2xl font-bold mb-6">Como funciona</h2>
-    <ol class="space-y-4">
-      <li>🧭 Escolha o serviço que precisa</li>
-      <li>📍 Veja oficinas próximas com preço e avaliação</li>
-      <li>📅 Agende direto pelo app</li>
-    </ol>
-  </section>
+    <section class="text-center py-12 px-6">
+        <h2 class="text-2xl font-bold mb-6">Como funciona</h2>
+        <ol class="space-y-4">
+            <li>🧭 Escolha o serviço que precisa</li>
+            <li>📍 Veja oficinas próximas com preço e avaliação</li>
+            <li>📅 Agende direto pelo app</li>
+        </ol>
+    </section>
 
-  <!-- Formulário para motoristas -->
-  <section id="sou-usuario" class="bg-white py-12 px-6">
-    <h2 class="text-2xl font-bold text-center mb-6">Sou motorista</h2>
-    <p class="text-center mb-4">Receba o convite para testar o app assim que estiver disponível. 100% gratuito!</p>
-    <form action="https://docs.google.com/forms/d/e/1FAIpQLSel6vOne5WAxGGneLFNYCM6CEkn2-Ecil4Ju0XqCrKlBZY-xA/formResponse" method="POST" class="max-w-md mx-auto space-y-4">
-      <input type="text" name="entry.2005620554" placeholder="Nome completo" required class="w-full p-3 border rounded" />
-      <input type="email" name="entry.1045781291" placeholder="Seu e-mail" required class="w-full p-3 border rounded" />
-      <input type="text" name="entry.839337160" placeholder="Cidade / Estado" required class="w-full p-3 border rounded" />
-      <button type="submit" class="w-full bg-blue-900 text-white py-3 rounded font-semibold">Quero ser avisado</button>
-    </form>
-  </section>
+    <section id="sou-usuario" class="bg-white py-12 px-6">
+        <h2 class="text-2xl font-bold text-center mb-6">Sou motorista</h2>
+        <p class="text-center mb-4">Receba o convite para testar o app assim que estiver disponível. 100% gratuito!</p>
+        <form id="form-motorista" class="max-w-md mx-auto space-y-4">
+            <input type="text" name="entry.2005620554" placeholder="Nome completo" required class="w-full p-3 border rounded" />
+            <input type="email" name="entry.1045781291" placeholder="Seu e-mail" required class="w-full p-3 border rounded" />
+            <input type="text" name="entry.839337160" placeholder="Cidade / Estado" required class="w-full p-3 border rounded" />
+            <button type="submit" class="w-full bg-blue-900 text-white py-3 rounded font-semibold">Quero ser avisado</button>
+            <p id="msg-motorista" class="text-center text-sm mt-4 hidden"></p>
+        </form>
+    </section>
 
-  <!-- Formulário para oficinas -->
-  <section id="sou-oficina" class="bg-gray-50 py-12 px-6">
-    <h2 class="text-2xl font-bold text-center mb-6">Sou oficina</h2>
-    <p class="text-center mb-4">Participe do piloto gratuito e receba pedidos de serviços da sua região.</p>
-    <form action="https://docs.google.com/forms/d/e/1FAIpQLSeRLe8WUD92zkW3ahVQO6sXOzdqRhHYnnkQifCL20qFTcQrXw/formResponse" method="POST" class="max-w-md mx-auto space-y-4">
-      <input type="text" name="entry.2005620554" placeholder="Nome da oficina" required class="w-full p-3 border rounded" />
-      <input type="text" name="entry.1924596585" placeholder="Responsável" required class="w-full p-3 border rounded" />
-      <input type="email" name="entry.1045781291" placeholder="E-mail comercial" required class="w-full p-3 border rounded" />
-      <input type="text" name="entry.1065046570" placeholder="WhatsApp" required class="w-full p-3 border rounded" />
-      <input type="text" name="entry.1166974658" placeholder="Cidade / Estado" required class="w-full p-3 border rounded" />
-      <button type="submit" class="w-full bg-blue-900 text-white py-3 rounded font-semibold">Cadastrar minha oficina</button>
-    </form>
-  </section>
+    <section id="sou-oficina" class="bg-gray-50 py-12 px-6">
+        <h2 class="text-2xl font-bold text-center mb-6">Sou oficina</h2>
+        <p class="text-center mb-4">Participe do piloto gratuito e receba pedidos de serviços da sua região.</p>
+        <form id="form-oficina" class="max-w-md mx-auto space-y-4">
+            <input type="text" name="entry.2005620554" placeholder="Nome da oficina" required class="w-full p-3 border rounded" />
+            <input type="text" name="entry.1924596585" placeholder="Responsável" required class="w-full p-3 border rounded" />
+            <input type="email" name="entry.1045781291" placeholder="E-mail comercial" required class="w-full p-3 border rounded" />
+            <input type="text" name="entry.1065046570" placeholder="WhatsApp" required class="w-full p-3 border rounded" />
+            <input type="text" name="entry.1166974658" placeholder="Cidade / Estado" required class="w-full p-3 border rounded" />
+            <button type="submit" class="w-full bg-blue-900 text-white py-3 rounded font-semibold">Cadastrar minha oficina</button>
+            <p id="msg-oficina" class="text-center text-sm mt-4 hidden"></p>
+        </form>
+    </section>
 
-  <!-- Rodapé -->
-  <footer class="bg-blue-900 text-white text-center py-6">
-    <p>Oficina Agora © 2025 • Projeto em validação de mercado</p>
-    <p>Contato:devoltech.co@gmail.com</p>
-  </footer>
+    <footer class="bg-blue-900 text-white text-center py-6">
+        <p>Oficina Agora © 2025 • Projeto em validação de mercado</p>
+        <p>Contato:devotech.co@gmail.com</p>
+    </footer>
 
+    <script>
+        // URLs completas de formResponse para cada formulário do Google Forms
+        // Certifique-se de que estes links TERMINAM em /formResponse e são os corretos do seu Forms.
+        const GOOGLE_FORM_URL_MOTORISTA = 'https://docs.google.com/forms/d/e/1FAIpQLSel6vOne5WAxGGneLFNYCM6CEkn2-Ecil4Ju0XqCrKlBZY-xA/formResponse';
+        const GOOGLE_FORM_URL_OFICINA = 'https://docs.google.com/forms/d/e/1FAIpQLSeRLe8WUD92zkW3ahVQO6sXOzdqRhHYnnkQifCL20qFTcQrXw/formResponse';
+
+        // Função para lidar com o envio de qualquer formulário
+        function handleFormSubmission(event, formUrl, msgElementId) {
+            event.preventDefault(); // Impede o envio padrão do formulário
+
+            const form = event.target;
+            const formData = new FormData(form);
+            const msgElement = document.getElementById(msgElementId);
+
+            // Esconde a mensagem anterior e remove classes de cor
+            msgElement.classList.add('hidden');
+            msgElement.classList.remove('text-green-600', 'text-red-500');
+
+            fetch(formUrl, {
+                method: 'POST',
+                body: formData,
+                mode: 'no-cors' // Importante para evitar erros de CORS.
+                               // Significa que não podemos ler a resposta do Google,
+                               // mas a submissão ocorrerá em segundo plano.
+            })
+            .then(() => {
+                // A submissão via fetch com no-cors SEMPRE retorna sucesso aqui,
+                // porque o navegador não verifica a resposta real (redirecionamento do Google).
+                // Acreditamos que a submissão para o Google Forms foi bem-sucedida.
+                msgElement.textContent = 'Sua inscrição foi enviada com sucesso! Em breve entraremos em contato.';
+                msgElement.classList.remove('hidden');
+                msgElement.classList.add('text-green-600');
+                form.reset(); // Limpa os campos do formulário
+            })
+            .catch(error => {
+                // Este catch só pegará erros de rede do lado do cliente ou erros no JavaScript.
+                console.error('Erro ao enviar o formulário:', error);
+                msgElement.textContent = 'Ocorreu um erro ao enviar sua inscrição. Tente novamente.';
+                msgElement.classList.remove('hidden');
+                msgElement.classList.add('text-red-500');
+            });
+        }
+
+        // Adiciona o event listener para o formulário de motoristas
+        document.getElementById('form-motorista').addEventListener('submit', function(event) {
+            handleFormSubmission(event, GOOGLE_FORM_URL_MOTORISTA, 'msg-motorista');
+        });
+
+        // Adiciona o event listener para o formulário de oficinas
+        document.getElementById('form-oficina').addEventListener('submit', function(event) {
+            handleFormSubmission(event, GOOGLE_FORM_URL_OFICINA, 'msg-oficina');
+        });
+    </script>
 </body>
 </html>
